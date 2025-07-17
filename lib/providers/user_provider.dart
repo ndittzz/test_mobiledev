@@ -28,6 +28,7 @@ class UserProvider with ChangeNotifier {
     try {
       final response = await http.get(
         Uri.parse('https://reqres.in/api/users?page=$_page&per_page=10'),
+        headers: {'x-api-key': 'reqres-free-v1'},
       );
 
       if (response.statusCode == 200) {
@@ -42,7 +43,10 @@ class UserProvider with ChangeNotifier {
           _users.addAll(newUsers);
         }
 
-        _hasMore = data['total_pages'] > _page;
+        final totalPages = data['total_pages'];
+        final currentPage = data['page'];
+        _hasMore = currentPage < totalPages;
+
         _page++;
         notifyListeners();
       }

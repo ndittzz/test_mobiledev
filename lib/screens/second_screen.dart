@@ -20,11 +20,15 @@ class SecondScreen extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.chevron_left, color: Colors.blue),
           onPressed: () {
             userProvider.clearSelectedUser();
             Navigator.pop(context);
           },
+        ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1),
+          child: Container(color: Colors.grey, height: 1),
         ),
       ),
       body: Padding(
@@ -32,28 +36,32 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Welcome', style: TextStyle(fontSize: 16)),
+            const Text('Welcome', style: TextStyle(fontSize: 12)),
             Text(
               palindromeProvider.name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 48),
 
-            // Selected User Display
-            Center(
-              child: Text(
-                userProvider.selectedUserName ?? 'Selected User Name',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+            Expanded(
+              child: Column(
+                children: [
+                  const Spacer(flex: 2),
+                  Center(
+                    // Tambahkan ini
+                    child: Text(
+                      userProvider.selectedUserName ?? 'Selected User Name',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const Spacer(flex: 3),
+                ],
               ),
             ),
 
-            const Spacer(),
-
-            // Choose a User Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

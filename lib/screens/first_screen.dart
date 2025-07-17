@@ -15,10 +15,7 @@ class FirstScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           // Background Image
-          Image.asset(
-            'assets/images/background.png', // Ganti dengan nama file yang kamu upload
-            fit: BoxFit.cover,
-          ),
+          Image.asset('assets/images/background.png', fit: BoxFit.cover),
           // Main content
           Padding(
             padding: const EdgeInsets.all(24.0),
