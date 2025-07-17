@@ -30,7 +30,7 @@ class UserListItem extends StatelessWidget {
                         user.fullName,
                         style: const TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       const SizedBox(height: 4),

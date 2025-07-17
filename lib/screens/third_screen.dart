@@ -49,7 +49,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
       appBar: AppBar(
         title: const Text(
           'Third Screen',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         leading: IconButton(

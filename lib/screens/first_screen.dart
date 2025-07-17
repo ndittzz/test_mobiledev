@@ -119,15 +119,15 @@ class FirstScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      if (provider.name.trim().isEmpty ||
-                          provider.sentence.trim().isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Please complete all fields'),
-                          ),
-                        );
-                        return;
-                      }
+                      // if (provider.name.trim().isEmpty ||
+                      //     provider.sentence.trim().isEmpty) {
+                      //   ScaffoldMessenger.of(context).showSnackBar(
+                      //     const SnackBar(
+                      //       content: Text('Please complete all fields'),
+                      //     ),
+                      //   );
+                      //   return;
+                      // }
 
                       Navigator.push(
                         context,

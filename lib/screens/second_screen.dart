@@ -16,7 +16,7 @@ class SecondScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Second Screen',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -36,10 +36,12 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Welcome', style: TextStyle(fontSize: 12)),
+            Text('Welcome', style: const TextStyle(fontSize: 12)),
             Text(
-              palindromeProvider.name,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              palindromeProvider.name.isEmpty
+                  ? 'User'
+                  : palindromeProvider.name,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
 
             Expanded(
@@ -53,7 +55,7 @@ class SecondScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -66,7 +68,7 @@ class SecondScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF32627A),
+                  backgroundColor: const Color(0xFF2B637B),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
